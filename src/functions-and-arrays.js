@@ -123,10 +123,6 @@ function avg(arrayMix) {
 	return Math.round((summNumbers / arrayMix.length) * 100) / 100;
 }
 
-// const mixedArrForTest = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
-const mixedArrForTest = [6, 12, 'miami', 1, 'barca', '200', 'lisboa', 8, false];
-console.log(avg(mixedArrForTest));
-
 // ************************************************************************
 
 // Iteration #5: Unique arrays
@@ -144,14 +140,36 @@ const wordsUnique = [
 	'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(arrGiven) {
+	if (!arrGiven || arrGiven.length === 0) {
+		return null;
+	}
+
+	const arrResult = [];
+
+	for (let i = 0; i < arrGiven.length; i++) {
+		if (!arrResult.includes(arrGiven[i])) {
+			arrResult.push(arrGiven[i]);
+		}
+	}
+
+	return arrResult;
+}
 
 // ************************************************************************
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(arrGiven, word) {
+	if (!arrGiven || arrGiven.length === 0) {
+		return null;
+	}
+
+	return arrGiven.includes(word);
+}
+
+// ************************************************************************
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -168,7 +186,17 @@ const wordsCount = [
 	'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(arrayToProve, word) {
+	let sum = 0;
+	for (let i = 0; i < arrayToProve.length; i++) {
+		if (word === arrayToProve[i]) {
+			sum += 1;
+		}
+	}
+	return sum;
+}
+
+// ************************************************************************
 
 // Iteration #8: Bonus
 const matrix = [
@@ -195,6 +223,8 @@ const matrix = [
 ];
 
 function greatestProduct() {}
+
+// ************************************************************************
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
